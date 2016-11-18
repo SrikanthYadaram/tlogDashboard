@@ -10,8 +10,8 @@ var wmApp = angular.module('myApp', ["ngRoute", 'smart-table']);
 
 wmApp.config(function($routeProvider) {
     $routeProvider
-        .when("posProducts", {templateUrl : ".partials/posProducts.html", controller : filterCtrl})
-        .when("error",  {templateUrl : ".partials/404_page.html", controller : Controller404})
+        .when("/posProducts", {templateUrl : "./partials/posProducts.html", controller : 'filterCtrl'})
+        .when("/error",  {templateUrl : "/partials/404_page.html", controller : 'Controller404'});
 
 });
 
