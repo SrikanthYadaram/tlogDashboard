@@ -347,3 +347,7 @@ footer a:hover
   border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
   -webkit-border: 7px 7px 7px 7px;}
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: #E3E3E1;
+}
