@@ -1,25 +1,25 @@
-<div id="main" >
-    <table st-table="productsCollection" class="table table-striped table-hover">
+<div id="main" ng-if="productCollection !== undefined">
+    <table st-table="productCollection" class="table table-striped table-hover">
         <thead>
         <tr style="font-size: 12px">
-            <th st-sort="product">Product</th>
-            <th st-sort="teckStack">Technology stack</th>
+            <th st-sort="pName">Product</th>
+            <th st-sort="pTech">Technology stack</th>
         </tr>
         <tr>
             <th>
-                <input st-search="productName" placeholder="search for product" class="input-sm form-control"
+                <input st-search="pName" placeholder="search for product" class="input-sm form-control"
                        type="search"/>
             </th>
             <th colspan="3">
-                <input st-search placeholder="search for tech stack" class="input-sm form-control" type="search"/>
+                <input st-search="pTech" placeholder="search for tech stack" class="input-sm form-control" type="search"/>
             </th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="product in productsCollection">
-            <td>{{product.productName | uppercase}}</td>
-            <td>{{product.techStack}}</td>
-            <td><a ng-href="#services/{{product.productName}}">Details</a></td>
+        <tr ng-repeat="product in productCollection">
+            <td>{{product.pName | uppercase}}</td>
+            <td>{{product.pTech}}</td>
+            <td><a ng-href="#service/{{product.pName}}/{{product.pId}}">Details</a></td>
         </tr>
         </tbody>
     </table>
