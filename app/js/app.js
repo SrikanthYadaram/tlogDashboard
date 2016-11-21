@@ -1,4 +1,4 @@
-var wmApp = angular.module('myApp', ["ngRoute", 'smart-table', "chart.js", "chartApp"]);
+var wmApp = angular.module('myApp', ["ngRoute", 'smart-table', "chart.js"]);
 
 
 wmApp.config(function($routeProvider) {
