@@ -3,6 +3,7 @@
         <thead>
         <tr style="font-size: 12px">
             <th st-sort="pName">Product</th>
+            <th st-sort="pName">Automation %</th>
             <th st-sort="pTech">Technology stack</th>
         </tr>
         <tr>
@@ -17,9 +18,18 @@
         </thead>
         <tbody>
         <tr ng-repeat="product in productCollection">
-            <td>{{product.pName | uppercase}}</td>
+            <td><a title="Data, coming soon.." style="text-decoration:none">{{product.pName | uppercase}}</a></td>
+            <td>
+                <div class="progress" ng-if="products !== undefined">
+                    <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">
+                <div  id = "product.pId" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{productAutomation[product.pId]}}%">
+                   {{productAutomation[product.pId]}}% complete
+                </div>
+                    </a>
+            </div></td>
             <td>{{product.pTech}}</td>
-            <td><a ng-href="#service/{{product.pName}}/{{product.pId}}">Details</a></td>
+            <td><a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">Details</a></td>
         </tr>
         </tbody>
     </table>

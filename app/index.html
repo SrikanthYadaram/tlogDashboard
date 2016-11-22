@@ -9,6 +9,7 @@
     <link data-require="bootstrap-css@3.2.0" data-semver="3.2.0" rel="stylesheet"
           href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/walmartLogo.png">
     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="js/angular.min.js"></script>
@@ -24,16 +25,16 @@
     <script type="text/javascript" src="js/errorListController.js"></script>
     <script type="text/javascript" src="js/chartApp.js"></script>
 </head>
-<header ng-controller="deptCtrl" >
-    <div id="strapline" >
+<header ng-controller="deptCtrl">
+    <div id="strapline">
         <div id="welcome_slogan">
-            <h3><img src = "images/logo.png" alt="Dashboard logo" align="center" style="width:274px;height:98px;" ></h3>
+            <h3><img src="images/logo.png" alt="Dashboard logo" align="center" style="width:274px;height:98px;"></h3>
         </div>
     </div>
     <nav style=" padding: 31px 14px 1px 2px" ng-if="departmentCollection !== undefined">
-        <div  id="tabbar" ng-repeat="dept in departmentCollection">
+        <div id="tabbar" ng-repeat="dept in departmentCollection">
             <ul id="nav">
-                <li ><a ng-href="#product/{{dept.deptName}}/{{dept.deptId}}">{{dept.deptName}}</a></li>
+                <li><a ng-href="#product/{{dept.deptName}}/{{dept.deptId}}">{{dept.deptName}}</a></li>
             </ul>
         </div>
     </nav>
