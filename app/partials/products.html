@@ -3,10 +3,10 @@
         <thead thead-inverse>
         <tr style="font-size: 12px">
             <th  width=220 st-sort="pName">Product <i class="fa fa-sort" aria-hidden="true"></i></th>
-            <th st-sort="pTech">Development tech stack</th>
-            <th st-sort="pTech">QA tools</th>
-            <th st-sort="pTech">Automation tech stack</th>
-            <th st-sort="pName">Automation %</th>
+            <th st-sort="devTech">Development tech stack</th>
+            <th st-sort="qaTool">QA tools</th>
+            <th st-sort="automationTech">Automation tech stack</th>
+            <th>Automation %</th>
         </tr>
         <tr>
             <td>
@@ -25,10 +25,10 @@
             </th>-->
         </tr>
         </thead>
-        <tbody>
-        <tr ng-repeat="product in productCollection" height = 70%>
+        <tbody ng-repeat="product in productCollection">
+        <tr class="main-row" ng-click="toggleDetail($index)" height = 70%>
             <td> <i class="fa fa-plus-square fa-lg" aria-hidden="true"></i> {{product.pName | uppercase}}</a></td>
-            <td ng-mouseover="product.devTech">{{product.devTech}}</td>
+            <td>{{product.devTech}}</td>
             <td>{{product.qaTool}}</td>
             <td>{{product.automationTech}}</td>
             <td>
@@ -41,6 +41,13 @@
                     </a>
                 </div></td>
         </tr>
-        </tbody>
-    </table>
+        <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined"><td>
+                    <td> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">
+                        <i class="fa fa-th-list" aria-hidden="true" style="color:green"></i>
+                        #services: {{products[product.pId].serviceDetails.length}}</a></td>
+                    <td>#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>
+                    <td>#automation TC's: {{products[product.pId].productAutomationCount}}</td>
+                </tr>
+            </table>
+
 </div><!--close main-->

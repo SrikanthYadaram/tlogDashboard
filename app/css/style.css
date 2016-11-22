@@ -406,3 +406,17 @@ td br{
   line-height: 0px;
   display:none;
 }
+
+.main-row {
+  cursor: pointer;
+}
+
+.main-row:hover {
+  background-color: #ddd;
+}
+
+.extra-row {
+  background-color: white;
+  font-size: 12px;
+  color: #blue;
+}
