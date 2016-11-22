@@ -22,7 +22,7 @@ wmApp.controller('serviceCtrl', ['$scope', '$filter','$http','$routeParams', fun
         scope.serviceCollection = response.data;
         for(i=0;i<scope.serviceCollection.length; i++){
             scope.labels.push(scope.serviceCollection[i].serviceName);
-            scope.data.push(scope.serviceCollection[i].automatedTestCases*100/scope.serviceCollection[i].expectedToAutomate);
+            scope.data.push(Math.round(scope.serviceCollection[i].automatedTestCases*100/scope.serviceCollection[i].expectedToAutomate));
             scope.expectedAutomationCount = scope.expectedAutomationCount+ scope.serviceCollection[i].expectedToAutomate;
             scope.automationCount = scope.automationCount+ scope.serviceCollection[i].automatedTestCases;
         }
@@ -30,7 +30,6 @@ wmApp.controller('serviceCtrl', ['$scope', '$filter','$http','$routeParams', fun
         }, function (response) {
         console.log("failed to load product services" + response.status);
     });
-
 
 }]);
 

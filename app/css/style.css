@@ -17,7 +17,7 @@ body
 }
 
 /* tell the browser to render HTML 5 elements as block */
-article, aside, figure, footer, header, hgroup, nav, section { 
+article, aside, figure, footer, header,  nav, section {
   display:block;
 }
 
@@ -190,10 +190,10 @@ ul img {
   left: 0; 
   z-index: 500;}
  
-#slideshow-caption .slideshow-caption-container {
+/*#slideshow-caption .slideshow-caption-container {
   padding: 10px 25px 10px 25px; 
   background: transparent url(../images/transparent.png) repeat;  
-  z-index: 1000;}
+  z-index: 1000;}*/
  
 #slideshow-caption p {
   padding: 0;
@@ -356,6 +356,53 @@ footer a:hover
   height: 15px;
   width: 120px;
   font-size: 10px;
+  margin-bottom: 0px;
+}
+
+th {
+  background-color: #DCDCDC;
+  color: black;
+}
+
+i{
+  color: #808080 ;
 }
 
 
+.searchIcon {
+  float: right;
+  size: 20px;
+  margin-right: 6px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+  color: #808080;
+}
+
+
+table {
+  table-layout: fixed;
+  width: 400px;
+}
+
+th, td {
+  padding:1mm;
+
+}
+
+
+tr {
+  height:20px;
+}
+
+td {
+  white-space: nowrap;
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td br{
+  line-height: 0px;
+  display:none;
+}
