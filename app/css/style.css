@@ -352,4 +352,10 @@ footer a:hover
   background-color: #E3E3E1;
 }
 
+.progress {
+  height: 15px;
+  width: 120px;
+  font-size: 10px;
+}
+
 

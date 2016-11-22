@@ -3,8 +3,8 @@
         <thead>
         <tr style="font-size: 12px">
             <th st-sort="pName">Product</th>
-            <th st-sort="pName">Automation %</th>
             <th st-sort="pTech">Technology stack</th>
+            <th st-sort="pName">Automation %</th>
         </tr>
         <tr>
             <th>
@@ -17,18 +17,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="product in productCollection">
+        <tr ng-repeat="product in productCollection" height = 70%>
             <td><a title="Data, coming soon.." style="text-decoration:none">{{product.pName | uppercase}}</a></td>
+            <td>{{product.pTech}}</td>
             <td>
                 <div class="progress" ng-if="products !== undefined">
                     <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">
-                <div  id = "product.pId" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{productAutomation[product.pId]}}%">
-                   {{productAutomation[product.pId]}}% complete
-                </div>
+                        <div  id = "product.pId" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                              aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{productAutomation[product.pId]}}%">
+                            {{productAutomation[product.pId]}}%
+                        </div>
                     </a>
-            </div></td>
-            <td>{{product.pTech}}</td>
+                </div></td>
             <td><a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">Details</a></td>
         </tr>
         </tbody>
