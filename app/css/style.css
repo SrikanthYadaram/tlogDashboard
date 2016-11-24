@@ -396,9 +396,8 @@ tr {
 }
 
 td {
-  white-space: nowrap;
+  white-space: initial;
   width: 50px;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -416,7 +415,9 @@ td br{
 }
 
 .extra-row {
-  background-color: white;
   font-size: 12px;
-  color: #blue;
+  background: #646565;
+  color: white;
 }
+
+

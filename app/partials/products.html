@@ -3,9 +3,9 @@
         <thead thead-inverse>
         <tr style="font-size: 12px">
             <th  width=220 st-sort="pName">Product <i class="fa fa-sort" aria-hidden="true"></i></th>
-            <th st-sort="devTech">Development tech stack</th>
-            <th st-sort="qaTool">QA tools</th>
-            <th st-sort="automationTech">Automation tech stack</th>
+            <th st-sort="devTech">Development tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th st-sort="qaTool">QA tools <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th st-sort="automationTech">Automation tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th>Automation %</th>
         </tr>
         <tr>
@@ -41,12 +41,15 @@
                     </a>
                 </div></td>
         </tr>
-        <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined"><td>
-                    <td> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">
-                        <i class="fa fa-th-list" aria-hidden="true" style="color:green"></i>
+        <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined">
+            <td bgcolor=white></td>
+            <td> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none; color: white">
+                <i class="fa fa-th-list" aria-hidden="true"  style="color: white"></i>
                         #services: {{products[product.pId].serviceDetails.length}}</a></td>
-                    <td>#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>
-                    <td>#automation TC's: {{products[product.pId].productAutomationCount}}</td>
+            <td>#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>
+            <td>#automation TC's: {{products[product.pId].productAutomationCount}}</td>
+            <td  bgcolor=white></td>
+
                 </tr>
             </table>
 

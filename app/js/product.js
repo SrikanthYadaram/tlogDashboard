@@ -7,7 +7,8 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.deptId = $routeParams.deptId;
     scope.products={};
     scope.productAutomation={};
-
+    scope.currentPage = 1;
+    scope.pageSize = 7;
     http.get('http://localhost:8080//products/deptId/'+ scope.deptId).then(function (response) {
         scope.productCollection = response.data;
         for(var i=0; i<scope.productCollection.length; i++) {
@@ -32,12 +33,15 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
                     scope.productAutomation[pId] = Math.round(scope.products[pId].productAutomationCount * 100 / scope.products[pId].productExpectedAutomationCount);
                     scope.toggleDetail = function($index) {
                         scope.activePosition = scope.activePosition == $index ? -1 : $index;
-                    };
+                    }
+
                 }, function (response) {
                     console.log("failed to load services" + response.status);
                 });
             }
+
     }]);
+
 
 /*wmApp.controller("AppCtrl", function($scope) {
     $scope.items = [1,2,3,4,5,6,7];
