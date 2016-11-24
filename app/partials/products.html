@@ -1,5 +1,5 @@
 <div id="main" ng-if="productCollection !== undefined">
-    <table st-table="productCollection" class="table table table-inverse table-hover">
+    <table st-table="productCollection" class="table">
         <thead thead-inverse>
         <tr style="font-size: 12px">
             <th  width=220 st-sort="pName">Product <i class="fa fa-sort" aria-hidden="true"></i></th>
@@ -17,16 +17,10 @@
                 <input st-search="" placeholder="Global search..." class="input-sm form-control" type="search"/>
                <i class="fa fa-search fa-lg searchIcon" aria-hidden="true"></i>
             </td>
-         <!--   <th colspan="4">
-                <input st-search="qaTool" placeholder="search for QA tools" class="input-sm form-control" type="search"/>
-            </th>
-            <th colspan="5">
-                <input st-search="automationTech" placeholder="search for automation tech stack" class="input-sm form-control" type="search"/>
-            </th>-->
         </tr>
         </thead>
         <tbody ng-repeat="product in productCollection">
-        <tr class="main-row" ng-click="toggleDetail($index)" height = 70%>
+        <tr  class="main-row" ng-click="toggleDetail($index)" height = 70%>
             <td> <i class="fa fa-plus-square fa-lg" aria-hidden="true"></i> {{product.pName | uppercase}}</a></td>
             <td>{{product.devTech}}</td>
             <td>{{product.qaTool}}</td>
@@ -43,11 +37,11 @@
         </tr>
         <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined">
             <td bgcolor=white></td>
-            <td> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none; color: white">
+            <td style=" background-color: inherit;"> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none; color: white">
                 <i class="fa fa-th-list" aria-hidden="true"  style="color: white"></i>
                         #services: {{products[product.pId].serviceDetails.length}}</a></td>
-            <td>#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>
-            <td>#automation TC's: {{products[product.pId].productAutomationCount}}</td>
+            <td style=" background-color: inherit;">#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>
+            <td style=" background-color: inherit;">#automation TC's: {{products[product.pId].productAutomationCount}}</td>
             <td  bgcolor=white></td>
 
                 </tr>
