@@ -7,8 +7,8 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.deptId = $routeParams.deptId;
     scope.products={};
     scope.productAutomation={};
-    scope.currentPage = 1;
-    scope.pageSize = 7;
+    scope.labels = ["Q1", "Q2", "Q3","Q4"];
+    scope.data = [25, 25, 25, 25];
     http.get('http://localhost:8080//products/deptId/'+ scope.deptId).then(function (response) {
         scope.productCollection = response.data;
         for(var i=0; i<scope.productCollection.length; i++) {

@@ -35,16 +35,33 @@
                     </a>
                 </div></td>
         </tr>
-        <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined">
-            <td bgcolor=white></td>
+
+        <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined"  style="border-style:hidden">
+            <td style=" background-color: white;" bgcolor=white></td>
             <td style=" background-color: inherit;"> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none; color: white">
                 <i class="fa fa-th-list" aria-hidden="true"  style="color: white"></i>
-                        #services: {{products[product.pId].serviceDetails.length}}</a></td>
+                #services: {{products[product.pId].serviceDetails.length}}</a></td>
             <td style=" background-color: inherit;">#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>
             <td style=" background-color: inherit;">#automation TC's: {{products[product.pId].productAutomationCount}}</td>
-            <td  bgcolor=white></td>
+            <td style=" background-color: white;"  bgcolor=white></td>
 
-                </tr>
+        </tr>
+        <tr class="extra-row" ng-if="activePosition == $index" ng-if="products !== undefined">
+            <td  style=" background-color: white;"  bgcolor=white></td>
+            <td style=" background-color: inherit;">
+                <div class="foo blue"><div>Q1 : </div></div>
+                <div class="foo purple"></div>
+            <td style=" background-color: inherit;">
+                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"  width="10" height="10"></canvas>
+                <div class="donut-inner">
+                    <h2 align="center">Road Map</h2>
+                </div>
+            </td>
+            <td  style=" background-color: inherit;" bgcolor=white></td>
+            <td  style=" background-color: white;" bgcolor=white></td>
+
+
+        </tr>
             </table>
 
 </div><!--close main-->
