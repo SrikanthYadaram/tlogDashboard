@@ -354,14 +354,30 @@ footer a:hover
 
 .progress {
   height: 15px;
-  width: 120px;
   font-size: 10px;
   margin-bottom: 0px;
+
 }
 
 th {
   background-color: #DCDCDC;
   color: black;
+}
+
+.progress-bar-purple {
+  background-color: mediumpurple;
+}
+
+.progress-bar-orange {
+   background-color: darkorange;
+ }
+
+.progress-bar-blue {
+  background-color: dodgerblue;
+}
+
+.progress-bar-indianred{
+  background-color: indianred;
 }
 
 i{
@@ -421,37 +437,9 @@ td br{
   color: white;
 }
 
-
-.donut-inner {
-  margin-top: -100px;
-  margin-bottom: 100px;
-}
-.donut-inner h2 {
+td div h5{
   color: white;
-  font-family: "Arial";
-  margin-bottom: 5px;
-  margin-top: -119px;
-}
-.donut-inner span {
-  font-size: 12px;
+  font-family: "Arial Narrow";
 }
 
-.foo {
-  float: left;
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-  border: 1px solid rgba(0, 0, 0, .2);
-}
 
-.blue {
-  background: #13b4ff;
-}
-
-.purple {
-  background: #ab3fdd;
-}
-
-.wine {
-  background: #ae163e;
-}

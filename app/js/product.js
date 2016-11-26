@@ -7,8 +7,28 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.deptId = $routeParams.deptId;
     scope.products={};
     scope.productAutomation={};
-    scope.labels = ["Q1", "Q2", "Q3","Q4"];
-    scope.data = [25, 25, 25, 25];
+    scope.roadMapQuarters = ["Q1","Q2","Q3","Q4"];
+    scope.roadMapStyle = [{
+        "services" : "3",
+        "width":"25",
+        "color":"progress-bar progress-bar-purple progress-bar-striped",
+        },
+        {
+            "services" : "4",
+            "width":"50",
+            "color":"progress-bar progress-bar-orange progress-bar-striped",
+        },
+        {
+            "services" : "2",
+            "width":"75",
+            "color":"progress-bar progress-bar-blue progress-bar-striped",
+        },
+        {
+            "services" : "4",
+            "width":"100",
+            "color":"progress-bar progress-bar-indianred progress-bar-striped",
+        }];
+
     http.get('http://localhost:8080//products/deptId/'+ scope.deptId).then(function (response) {
         scope.productCollection = response.data;
         for(var i=0; i<scope.productCollection.length; i++) {
@@ -18,6 +38,10 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     }, function (response) {
         console.log("failed to load departments" + response.status);
     });
+
+    scope.setRoadMapWidth = function getRoadMapWidth(size) {
+        return {width: size+ "%"};
+    };
 
             function getProdectDetails(pId) {
                 http.get('http://localhost:8080//service/pId/' + pId).then(function (response) {

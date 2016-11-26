@@ -6,7 +6,7 @@
             <th st-sort="devTech">Development tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="qaTool">QA tools <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="automationTech">Automation tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
-            <th>Automation %</th>
+            <th width="15%">Automation %</th>
         </tr>
         <tr>
             <td>
@@ -48,16 +48,19 @@
         </tr>
         <tr class="extra-row" ng-if="activePosition == $index" ng-if="products !== undefined">
             <td  style=" background-color: white;"  bgcolor=white></td>
-            <td style=" background-color: inherit;">
-                <div class="foo blue"><div>Q1 : </div></div>
-                <div class="foo purple"></div>
-            <td style=" background-color: inherit;">
-                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"  width="10" height="10"></canvas>
-                <div class="donut-inner">
-                    <h2 align="center">Road Map</h2>
-                </div>
-            </td>
-            <td  style=" background-color: inherit;" bgcolor=white></td>
+
+            <td style=" background-color: inherit;border:hidden;" ><div> RoadMap : </div>
+                <div ng-repeat="quarter in roadMapQuarters"><h5 align="right"> {{quarter}}:  </h5></div>
+            <td  style=" background-color: inherit;" bgcolor=white >
+
+              <div class="progress" ng-repeat="roadMap in roadMapStyle"  ng-style="setRoadMapWidth(roadMap.width);" style="margin-bottom: 14px; margin-top: 15px; height: 15px">
+                  <span class="{{roadMap.color}}"    style="width:100%;">
+                      <h5 style="margin-bottom: 2px; color: black">{{roadMap.services}} services</h5>
+                  </span>
+
+            </div>
+        </td>
+            <td style=" background-color: inherit;">  </td>
             <td  style=" background-color: white;" bgcolor=white></td>
 
 
