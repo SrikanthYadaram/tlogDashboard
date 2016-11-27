@@ -2,13 +2,9 @@
  * Created by Srikanth on 11/20/2016.
  */
 
-wmApp.controller('deptCtrl', ['$scope', '$http','$location',function (scope, http, $location) {
-
-    scope.isActive = function (viewLocation) {
-        var active = (viewLocation === $location.path());
-        return active;
-    };
-
+wmApp.controller('deptCtrl', ['$scope', '$http','$location',function (scope, http) {
+    scope.states = {};
+    scope.states.activeItem = '1';
     http.get('http://localhost:8080/departments').then(function (response) {
         scope.departmentCollection = response.data;
     }, function (response) {
@@ -16,10 +12,6 @@ wmApp.controller('deptCtrl', ['$scope', '$http','$location',function (scope, htt
     })
 
 
-    scope.idSelected = null;
-    scope.setSelected = function (idSelected) {
-        scope.idSelected = idSelected;
-    };
 
 }]);
 

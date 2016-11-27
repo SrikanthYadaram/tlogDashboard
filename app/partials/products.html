@@ -49,13 +49,13 @@
         <tr class="extra-row" ng-if="activePosition == $index" ng-if="products !== undefined">
             <td  style=" background-color: white;"  bgcolor=white></td>
 
-            <td style=" background-color: inherit;border:hidden;" ><div> RoadMap : </div>
+            <td style=" background-color: inherit;border:hidden;" ><div> <i class="fa fa-map-signs" aria-hidden="true" style="color: white"></i> RoadMap : </div>
                 <div ng-repeat="quarter in roadMapQuarters"><h5 align="right"> {{quarter}}:  </h5></div>
             <td  style=" background-color: inherit;" bgcolor=white >
 
               <div class="progress" ng-repeat="roadMap in roadMapStyle"  ng-style="setRoadMapWidth(roadMap.width);" style="margin-bottom: 14px; margin-top: 15px; height: 15px">
                   <span class="{{roadMap.color}}"    style="width:100%;">
-                      <h5 style="margin-bottom: 2px; color: black">{{roadMap.services}} services</h5>
+                      <h5 style="margin-bottom: 2px; color: white">{{roadMap.services}} services</h5>
                   </span>
 
             </div>
