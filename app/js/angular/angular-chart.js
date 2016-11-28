@@ -16,7 +16,7 @@
       typeof Chart !== 'undefined' ? Chart : require('chartApp.js'));
   }  else if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['angular', 'chart'], factory);
+    define(['../../bower_components/angular/angular', 'chart'], factory);
   } else {
     // Browser globals
     if (typeof angular === 'undefined' || typeof Chart === 'undefined')
