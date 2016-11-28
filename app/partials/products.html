@@ -1,15 +1,14 @@
 <div id="main" ng-if="productCollection !== undefined">
     <table st-table="productCollection" class="table">
         <thead thead-inverse>
-        <tr style="font-size: 12px">
-            <th style="background-color:white"><i class="fa fa-list-alt" aria-hidden="true" style="color:black;"></i> {{deptName}}</th>
-        </tr>
+        <div style="font-size: 16px; background-color:white;padding-left: 7px;"> <i class="fa fa-list-alt" aria-hidden="true" style="color:black;"></i> {{deptName}}
+        </div>
         <tr style="font-size: 12px">
             <th  width=220 st-sort="pName">Product <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="devTech">Development tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
-            <th st-sort="qaTool">QA tools <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th st-sort="qaTool" width="12%">QA tools <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="automationTech">Automation tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
-            <th>Automation %</th>
+            <th width="12%">Automation %</th>
         </tr>
         <tr>
             <td>

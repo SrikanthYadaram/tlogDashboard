@@ -412,3 +412,9 @@ td div h5{
 div ul li a
 {  color: royalblue;
   text-decoration: none;}
+
+div h4 {
+  background-color: inherit;
+  color: black;
+  font-family: Calibri bold;
+}
