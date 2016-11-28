@@ -7,6 +7,8 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.deptId = $routeParams.deptId;
     scope.products={};
     scope.productAutomation={};
+    scope.currentPage = 1;
+    scope.pageSize = 10;
     scope.roadMapQuarters = ["Q1","Q2","Q3","Q4"];
     scope.roadMapStyle = [{
         "services" : "3",

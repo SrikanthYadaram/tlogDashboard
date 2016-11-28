@@ -1,4 +1,4 @@
-var wmApp = angular.module('myApp', ["ngRoute", 'smart-table', "chart.js"]);
+var wmApp = angular.module('myApp', ["ngRoute", 'smart-table', "chart.js","angularUtils.directives.dirPagination"]);
 
 
 wmApp.config(function($routeProvider) {
