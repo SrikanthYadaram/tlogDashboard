@@ -20,6 +20,7 @@
     <script type="text/javascript" src="js/department.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/angular-chart.js"></script>
     <script type="text/javascript" src="js/angular-chart.min.js"></script>
     <script type="text/javascript" src="js/errorListController.js"></script>
@@ -28,17 +29,17 @@
 <header ng-controller="deptCtrl" >
     <div id="strapline" >
         <div id="welcome_slogan">
-            <h3><img src = "images/logo.png" alt="Dashboard logo" align="center" style="width:274px;height:98px;" ></h3>
+            <img src = "images/logo.png" alt="Dashboard logo" align="center" style="width:274px;height:98px;" >
+           <!-- <img src = "images/ustlogo.png" alt="ust logo" align="left">
+            <img src = "images/walmart logo.png" alt="walmart logo" align="right" style="width:174px;height:48px;">-->
         </div>
     </div>
-    <div>
-        <nav ng-if="departmentCollection !== undefined">
-            <div  id="tabbar" ng-repeat="dept in departmentCollection">
-                <ul  class="nav nav-pills red navbar-left"  >
-                    <li><a ng-href="#product/{{dept.deptName}}/{{dept.deptId}}" style="padding-top: 0px">{{dept.deptName}}</a></li>
-                </ul>
-            </div>
-        </nav>
+    <div class="dropdown" ng-if="departmentCollection !== undefined" style="padding-top: 33px;">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bars" aria-hidden="true" style="color: white"></i> Departments
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="dept in departmentCollection"><a ng-href="#product/{{dept.deptName}}/{{dept.deptId}}">{{dept.deptName}}</a></li>
+        </ul>
     </div>
 </header>
 <div class="ng-view"></div>

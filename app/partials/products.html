@@ -2,11 +2,14 @@
     <table st-table="productCollection" class="table">
         <thead thead-inverse>
         <tr style="font-size: 12px">
+            <th style="background-color:white"><i class="fa fa-list-alt" aria-hidden="true" style="color:black;"></i> {{deptName}}</th>
+        </tr>
+        <tr style="font-size: 12px">
             <th  width=220 st-sort="pName">Product <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="devTech">Development tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="qaTool">QA tools <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th st-sort="automationTech">Automation tech stack <i class="fa fa-sort" aria-hidden="true"></i></th>
-            <th width="15%">Automation %</th>
+            <th>Automation %</th>
         </tr>
         <tr>
             <td>
@@ -27,7 +30,7 @@
             <td>{{product.automationTech}}</td>
             <td>
                 <div class="progress" ng-if="products !== undefined">
-                    <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none">
+                    <a ng-href="#dept/{{deptName}}/{{product.pName}}/{{product.pId}}" style="text-decoration:none">
                         <div  id = "product.pId" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
                               aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{productAutomation[product.pId]}}%">
                             {{productAutomation[product.pId]}}%
@@ -38,7 +41,7 @@
 
         <tr class="extra-row" ng-show="activePosition == $index" ng-if="products !== undefined"  style="border-style:hidden">
             <td style=" background-color: white;" bgcolor=white></td>
-            <td style=" background-color: inherit;"> <a ng-href="#service/{{product.pName}}/{{product.pId}}" style="text-decoration:none; color: white">
+            <td style=" background-color: inherit;"> <a ng-href="#dept/{{deptName}}/{{product.pName}}/{{product.pId}}" style="text-decoration:none; color: white">
                 <i class="fa fa-th-list" aria-hidden="true"  style="color: white"></i>
                 #services: {{products[product.pId].serviceDetails.length}}</a></td>
             <td style=" background-color: inherit;">#manual TC's: {{products[product.pId].productExpectedAutomationCount}} </td>

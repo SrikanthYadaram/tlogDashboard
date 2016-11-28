@@ -4,6 +4,7 @@
 
 
 wmApp.controller('serviceCtrl', ['$scope', '$filter','$http','$routeParams', function (scope, filter, http, $routeParams, User) {
+    scope.deptName = $routeParams.deptName;
     scope.productName = $routeParams.productName;
     scope.producId = $routeParams.producId;
     scope.labels = [];

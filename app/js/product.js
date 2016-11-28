@@ -3,7 +3,7 @@
  */
 
 wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', function (scope, filter, http, $routeParams) {
-    scope.depttName = $routeParams.deptName;
+    scope.deptName = $routeParams.deptName;
     scope.deptId = $routeParams.deptId;
     scope.products={};
     scope.productAutomation={};

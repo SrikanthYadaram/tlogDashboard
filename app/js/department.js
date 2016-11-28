@@ -3,16 +3,11 @@
  */
 
 wmApp.controller('deptCtrl', ['$scope', '$http','$location',function (scope, http) {
-    scope.states = {};
-    scope.states.activeItem = '1';
     http.get('http://localhost:8080/departments').then(function (response) {
         scope.departmentCollection = response.data;
     }, function (response) {
         console.log("failed to load departments" + response.status);
     })
-
-
-
 }]);
 
 
