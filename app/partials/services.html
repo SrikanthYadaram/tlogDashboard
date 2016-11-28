@@ -32,12 +32,13 @@
         <tr ng-repeat="service in serviceCollection">
             <td>{{service.serviceName | uppercase}}</td>
             <td>
-                <span ng-switch on={{service.serviceStatus}}>
+                <i class="fa fa-play-circle fa-2x"  style="padding: 0px 0px 0px 0px; color: dodgerblue"  aria-hidden="true"></i>
+        <!--        <span ng-switch on={{service.serviceStatus}}>
                     <img ng-switch-when=true src='images/green-up.png' style="width:20px;height:18px;"/>
                     <img ng-switch-default src='images/red-error.png' style="width:20px;height:18px;"/>
-                </span>
+                </span>-->
 
-                     <i  class="fa fa-pencil-square-o fa-lg" style="padding: 0px 0px 0px 30px;" aria-hidden="true"></i>
+                <!--     <i  class="fa fa-pencil-square-o fa-lg" style="padding: 0px 0px 0px 30px;" aria-hidden="true"></i>-->
 
             </td>
          </tr>
