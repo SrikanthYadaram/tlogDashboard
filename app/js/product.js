@@ -13,22 +13,22 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.roadMapStyle = [{
         "services" : "3",
         "width":"25",
-        "color":"progress-bar progress-bar-purple progress-bar-striped",
+        "color":"progress-bar progress-bar-purple ",
         },
         {
             "services" : "4",
             "width":"50",
-            "color":"progress-bar progress-bar-orange progress-bar-striped",
+            "color":"progress-bar progress-bar-orange ",
         },
         {
             "services" : "2",
             "width":"75",
-            "color":"progress-bar progress-bar-blue progress-bar-striped",
+            "color":"progress-bar progress-bar-blue ",
         },
         {
             "services" : "4",
             "width":"100",
-            "color":"progress-bar progress-bar-indianred progress-bar-striped",
+            "color":"progress-bar progress-bar-indianred ",
         }];
 
     http.get('http://localhost:8080//products/deptId/'+ scope.deptId).then(function (response) {
