@@ -20,7 +20,8 @@
             <th  width=220>Service name <i class="fa fa-sort" aria-hidden="true"></i></th>
             <th>Expected to automate </th>
             <th>Automated</th>
-            <th> Status</th>
+            <th>Manual test cases</th>
+            <th> </th>
         </tr>
         <tr>
             <th>
@@ -29,9 +30,10 @@
                 <i class="fa fa-search fa-lg searchIcon" aria-hidden="true"></i>
             </th>
             <th colspan="3">
-                <input st-search placeholder="Search for status..." class="input-sm form-control" type="search"/>
+                <input st-search placeholder="Global search..." class="input-sm form-control" type="search"/>
                 <i class="fa fa-search fa-lg searchIcon" aria-hidden="true"></i>
             </th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -39,6 +41,7 @@
             <td>{{service.serviceName | uppercase}}</td>
             <td>{{service.expectedToAutomate}}</td>
             <td>{{service.automatedTestCases}}</td>
+            <td>{{service.manualTestCaseCount}}</td>
             <td>
                 <i class="fa fa-play-circle fa-2x"  style="padding: 0px 0px 0px 0px; color: dodgerblue"  aria-hidden="true"></i>
         <!--        <span ng-switch on={{service.serviceStatus}}>

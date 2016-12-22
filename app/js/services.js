@@ -11,6 +11,7 @@ wmApp.controller('serviceCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.data = [];
     scope.automationCount=null;
     scope.expectedAutomationCount=null;
+    scope.manualTestCaseCount=null;
     scope.totalAutomationPercent=null;
     scope.options = {
         hover: {
@@ -26,6 +27,7 @@ wmApp.controller('serviceCtrl', ['$scope', '$filter','$http','$routeParams', fun
             scope.data.push(Math.round(scope.serviceCollection[i].automatedTestCases*100/scope.serviceCollection[i].expectedToAutomate));
             scope.expectedAutomationCount = scope.expectedAutomationCount+ scope.serviceCollection[i].expectedToAutomate;
             scope.automationCount = scope.automationCount+ scope.serviceCollection[i].automatedTestCases;
+            scope.manualTestCaseCount = scope.manualTestCaseCount + scope.serviceCollection[i].manualTestCaseCount;
         }
         scope.totalAutomationPercent = scope.automationCount*100/scope.expectedAutomationCount;
         }, function (response) {
