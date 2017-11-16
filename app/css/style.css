@@ -391,18 +391,30 @@ td br{
 
 .main-row {
   cursor: pointer;
+  font-size: 12px;
 }
 
 .main-row:hover {
-  background-color: #ddd;
+  background-color: black;
 }
 
 
+
+
+.table tbody tr.extra-row:hover td,
 .extra-row {
   font-size: 12px;
   background: #646565;
   color: white;
 }
+
+.table tbody tr td.un-selected:hover,
+.un-selected {
+  font-size: 12px;
+  background: white;
+  color: white;
+}
+
 
 td div h5{
   color: white;
@@ -417,4 +429,26 @@ div h4 {
   background-color: inherit;
   color: black;
   font-family: Calibri bold;
+}
+
+.labelbox{
+  width: 15px;
+  height: 8px;
+  float: right;
+  border: 7px white;
+
+}
+.pass{
+  background: #2ECF6E;
+}
+
+.fail{
+  background: #F65050;
+}
+
+tr div {
+  color: yellow;
+  font-family: "Verdana";
+  font-size: medium;
+  text-decoration-color: #1D1D1D;
 }

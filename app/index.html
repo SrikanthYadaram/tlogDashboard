@@ -10,7 +10,7 @@
           href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="images/walmartLogo.png">
+    <!--<link rel="icon" href="images/walmartLogo.png">-->
     <script type="text/javascript" src="js/jquery/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="js/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
@@ -26,22 +26,16 @@
     <script type="text/javascript" src="js/angular/angular-chart.min.js"></script>
     <script type="text/javascript" src="js/errorListController.js"></script>
 </head>
-<header ng-controller="deptCtrl" >
-    <div id="strapline" >
-        <div id="welcome_slogan">
-           <!-- <img src = "images/logo.png" alt="Dashboard logo" align="center" style="width:274px;height:98px;" >-->
-            <img src = "images/ustlogo.png" alt="ust logo" align="left">
-           <!-- <img src = "images/walmart logo.png" alt="walmart logo" align="right" style="width:174px;height:48px;">-->
-        </div>
-    </div>
-    <div class="dropdown" ng-if="departmentCollection !== undefined" style="padding-top: 33px;">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bars" aria-hidden="true" style="color: white"></i> Departments
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li ng-repeat="dept in departmentCollection"><a ng-href="#product/{{dept.deptName}}/{{dept.deptId}}">{{dept.deptName}}</a></li>
-        </ul>
-    </div>
+<header>
+    <!--<div id="strapline" >-->
+        <!--&lt;!&ndash;<div id="welcome_slogan">&ndash;&gt;-->
+           <!--&lt;!&ndash;&lt;!&ndash; <img src = "images/logo.png" alt="Dashboard logo" align="center" style="width:274px;height:98px;" >&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;<img src = "images/ustlogo.png" alt="ust logo" align="left">&ndash;&gt;-->
+           <!--&lt;!&ndash;&lt;!&ndash; <img src = "images/walmart logo.png" alt="walmart logo" align="right" style="width:174px;height:48px;">&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</div>-->
 </header>
+<body>
 <div class="ng-view"></div>
 </body>
 </html>

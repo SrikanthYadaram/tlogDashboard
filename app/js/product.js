@@ -3,39 +3,17 @@
  */
 
 wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', function (scope, filter, http, $routeParams) {
-    scope.deptName = $routeParams.deptName;
-    scope.deptId = $routeParams.deptId;
-    scope.products={};
-    scope.productAutomation={};
+    scope.productCollection={};
     scope.currentPage = 1;
     scope.pageSize = 10;
-    scope.roadMapQuarters = ["Q1","Q2","Q3","Q4"];
-    scope.roadMapStyle = [{
-        "services" : "3",
-        "width":"25",
-        "color":"progress-bar progress-bar-purple ",
-        },
-        {
-            "services" : "4",
-            "width":"50",
-            "color":"progress-bar progress-bar-orange ",
-        },
-        {
-            "services" : "2",
-            "width":"75",
-            "color":"progress-bar progress-bar-blue ",
-        },
-        {
-            "services" : "4",
-            "width":"100",
-            "color":"progress-bar progress-bar-indianred ",
-        }];
+    scope.labels = ["Pass", "Fail"];
+    scope.colours = ["#2ECF6E", "#F65050"];
+    scope.data = [11,15];
 
-    http.get('http://localhost:8080//products/deptId/'+ scope.deptId).then(function (response) {
+    http.get('http://localhost:8080//products').then(function (response) {
         scope.productCollection = response.data;
-        for(var i=0; i<scope.productCollection.length; i++) {
-            getProdectDetails(scope.productCollection[i].pId);
-
+        scope.toggleDetail = function($index) {
+            scope.activePosition = scope.activePosition == $index ? -1 : $index;
         }
     }, function (response) {
         console.log("failed to load departments" + response.status);
@@ -45,35 +23,6 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
         return {width: size+ "%"};
     };
 
-            function getProdectDetails(pId) {
-                http.get('http://localhost:8080//service/pId/' + pId).then(function (response) {
-                    var productDetails = {};
-                    productDetails.productAutomationCount = 0;
-                    productDetails.productExpectedAutomationCount = 0;
-                    productDetails.serviceDetails = response.data;
-                    for (var j = 0; j < response.data.length; j++) {
-                        productDetails.productAutomationCount = productDetails.productAutomationCount + response.data[j].automatedTestCases;
-                        productDetails.productExpectedAutomationCount = productDetails.productExpectedAutomationCount + response.data[j].expectedToAutomate;
-                    }
-                    scope.products[pId] = productDetails;
-                    scope.productAutomation[pId] = Math.round(scope.products[pId].productAutomationCount * 100 / scope.products[pId].productExpectedAutomationCount);
-                    scope.toggleDetail = function($index) {
-                        scope.activePosition = scope.activePosition == $index ? -1 : $index;
-                    }
+}]);
 
-                }, function (response) {
-                    console.log("failed to load services" + response.status);
-                });
-            }
-
-    }]);
-
-
-/*wmApp.controller("AppCtrl", function($scope) {
-    $scope.items = [1,2,3,4,5,6,7];
-    $scope.toggleDetail = function($index) {
-        //$scope.isVisible = $scope.isVisible == 0 ? true : false;
-        $scope.activePosition = $scope.activePosition == $index ? -1 : $index;
-    };
-});*/
 
