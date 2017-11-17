@@ -36,8 +36,6 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
                     }
                 }
                 scope.activePosition = scope.activePosition == $index ? -1 : $index;
-
-
         }
     }, function (response) {
         console.log("failed to load departments" + response.status);
@@ -46,6 +44,19 @@ wmApp.controller('productCtrl', ['$scope', '$filter','$http','$routeParams', fun
     scope.setRoadMapWidth = function getRoadMapWidth(size) {
         return {width: size+ "%"};
     };
+
+    scope.selectedRow = null;
+    var selectedVal = null;
+    scope.setSelectedRow = function (index) {
+        if(selectedVal != null && selectedVal == index){
+            scope.selectedRow = null;
+            selectedVal = null;
+        }else {
+           selectedVal = index;
+            scope.selectedRow = index;
+        }
+
+    }
 
 }]);
 

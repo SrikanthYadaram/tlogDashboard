@@ -394,6 +394,11 @@ td br{
   font-size: 12px;
 }
 
+.main-row-selected{
+  background-color: #E2ECF3;
+  font-weight: bold;
+}
+
 .main-row:hover {
   background-color: black;
 }
@@ -452,3 +457,4 @@ tr div {
   font-size: medium;
   text-decoration-color: #1D1D1D;
 }
+

@@ -31,8 +31,8 @@
         </tr>
         </thead>
         <tbody dir-paginate="product in productCollection | itemsPerPage: pageSize" current-page="currentPage">
-        <tr  class="main-row" ng-click="toggleDetail($index, product.productId)" height = 70%>
-            <td> <i class="fa fa-plus-square fa-lg" aria-hidden="true"></i> {{product.productId}}</a></td>
+        <tr class="main-row" ng-click="toggleDetail($index, product.productId); setSelectedRow($index)" ng-class="{'main-row-selected' : $index == selectedRow}" height = 70%>
+            <td> <i ng-class="{'fa fa-plus-square fa-lg' : $index != selectedRow,'fa fa-minus-square fa-lg' : $index == selectedRow }" aria-hidden="true"></i> {{product.productId}}</a></td>
             <td>{{product.productName}}</td>
             <td>{{product.totalTestCases}}</td>
             <td>0.0.1.Release</td>
